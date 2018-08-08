@@ -31,4 +31,13 @@ export class Intervention{
             id_Intervenant: this.id_Intervenant,
         };
     }
+    public copyfrom(source:Intervention){
+        this.id=source.id;
+        this.datePrevu=source.datePrevu;
+        this.dateEffectue=source.dateEffectue;
+        this.statut=source.statut;
+        this.commentaire=source.commentaire;
+        this.id_Materiel=source.id_Materiel;
+        this.id_Intervenant=source.id_Intervenant;
+    }
 }

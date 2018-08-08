@@ -16,11 +16,11 @@ export class LivreEditComponent implements OnInit, OnChanges {
   constructor(private interventionRepository:InterventionRepositoryService) { }
 
   ngOnInit() {
-    this.currentIntervention=new Intervention(0,"rien","aucun",10.0);
+    this.currentIntervention=new Intervention(0,null, null,"rien","aucun",0,0);
   }
   ngOnChanges(changes:any){
     if (this.editId==0){
-      this.currentIntervention=new Intervention(0,"rien","aucun",10.0);
+      this.currentIntervention=new Intervention(0,null, null,"rien","aucun",0,0);
     }
     else {
       this.interventionRepository.findById(this.editId).subscribe(intervention=>{
@@ -32,12 +32,12 @@ export class LivreEditComponent implements OnInit, OnChanges {
 
   public saveIntervention(){
     if (this.currentIntervention.id>0){
-      let interventionToSave=new Intervention(0,"","",0);
+      let interventionToSave=new Intervention(0,null, null,"rien","aucun",0,0);;
       
       interventionToSave.copyfrom(this.currentIntervention);
       
-      this.interventionRepository.updateLivre(livreToSave);
-      this.currentLivre=new Livre(0,"rien","aucun",10.0);
+      this.interventionRepository.updateIntervention(interventionToSave);
+      this.currentIntervention=new Intervention(0,null, null,"rien","aucun",0,0);
     }
   }
 
