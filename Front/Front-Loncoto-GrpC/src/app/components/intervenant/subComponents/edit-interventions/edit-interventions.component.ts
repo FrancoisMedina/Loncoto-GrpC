@@ -8,7 +8,7 @@ import { InterventionRepositoryService } from '../../../../services/intervention
   templateUrl: './edit-interventions.component.html',
   styleUrls: ['./edit-interventions.component.css']
 })
-export class LivreEditComponent implements OnInit, OnChanges {
+export class EditInterventionsComponent implements OnInit, OnChanges {
 
   @Input() public editId: number;
   public currentIntervention: Intervention;

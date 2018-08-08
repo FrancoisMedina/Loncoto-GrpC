@@ -44,4 +44,10 @@ export class InterventionRepositoryService {
 
 
   }
+
+  public updateIntervention(intervention : Intervention): void {
+    this.http.put(`http://localhost:3000/livres/${intervention.id}`, intervention.toJson()).subscribe(resp =>{
+              this.refreshListe();
+    });
+  }
 }
